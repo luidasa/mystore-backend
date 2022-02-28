@@ -19,6 +19,8 @@ app.use(express.json())
 
 // Cualquier petición que comience con /api/usuarios va a ser respondido por el require que esta en el archivo
 app.use('/api/usuarios', require('./routes/usuarios.routes'));
+app.use('/api/productos', require('./routes/productos.routes'));
+app.use('/api/buscar', require('./routes/busquedas.routes'));
 app.use('/api/login', require('./routes/auth.routes'));
 
 app.listen(port, () => {

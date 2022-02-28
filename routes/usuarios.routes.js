@@ -23,6 +23,7 @@ router.get('/',
 
 router.post('/', 
     [
+        validarJwt,
         check('nombre', 'El nombre es obligatorio').notEmpty(),
         check('email', 'El email es obligatorio').isEmail(),
         check('password', 'El password es obligatorio').notEmpty(),
@@ -32,6 +33,7 @@ router.post('/',
 
 router.put('/:id', 
     [
+        validarJwt,
         check('nombre', 'El nombre es obligatorio').notEmpty(),
         check('email', 'El email es obligatorio').isEmail(),
         check('role', 'El role es obligatorio').notEmpty(),
@@ -39,7 +41,7 @@ router.put('/:id',
     ],
     actualizarUsuario);
 
-router.delete('/:id', borrarUsuario);
+router.delete('/:id', [validarJwt], borrarUsuario);
 
 // Exportamos todo las rutas que se han definido en el router, para este modulo
 module.exports = router;
