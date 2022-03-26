@@ -22,6 +22,7 @@ app.use('/api/usuarios', require('./routes/usuarios.routes'));
 app.use('/api/productos', require('./routes/productos.routes'));
 app.use('/api/buscar', require('./routes/busquedas.routes'));
 app.use('/api/login', require('./routes/auth.routes'));
+app.use('/api/upload', require('./routes/uploads.route'));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

@@ -1,8 +1,5 @@
 const { response, request } = require('express');
-const { contextsKey } = require('express-validator/src/base');
 
-const req = require("express/lib/request");
-const res = require("express/lib/response");
 const Producto = require("../models/producto");
 const Usuario = require('../models/usuario');
 
